@@ -46,6 +46,7 @@ class NetState;
 class NetStateRule;
 class ParamSpec;
 class LayerParameter;
+class SmoothL1LossOHEMParameter;
 class TransformationParameter;
 class LossParameter;
 class AccuracyParameter;
@@ -3254,6 +3255,15 @@ class LayerParameter : public ::google::protobuf::Message {
   inline ::caffe::BoxAnnotatorOHEMParameter* release_box_annotator_ohem_param();
   inline void set_allocated_box_annotator_ohem_param(::caffe::BoxAnnotatorOHEMParameter* box_annotator_ohem_param);
 
+  // optional .caffe.SmoothL1LossOHEMParameter smooth_l1_loss_ohem_param = 152;
+  inline bool has_smooth_l1_loss_ohem_param() const;
+  inline void clear_smooth_l1_loss_ohem_param();
+  static const int kSmoothL1LossOhemParamFieldNumber = 152;
+  inline const ::caffe::SmoothL1LossOHEMParameter& smooth_l1_loss_ohem_param() const;
+  inline ::caffe::SmoothL1LossOHEMParameter* mutable_smooth_l1_loss_ohem_param();
+  inline ::caffe::SmoothL1LossOHEMParameter* release_smooth_l1_loss_ohem_param();
+  inline void set_allocated_smooth_l1_loss_ohem_param(::caffe::SmoothL1LossOHEMParameter* smooth_l1_loss_ohem_param);
+
   // @@protoc_insertion_point(class_scope:caffe.LayerParameter)
  private:
   inline void set_has_name();
@@ -3366,6 +3376,8 @@ class LayerParameter : public ::google::protobuf::Message {
   inline void clear_has_smooth_l1_loss_param();
   inline void set_has_box_annotator_ohem_param();
   inline void clear_has_box_annotator_ohem_param();
+  inline void set_has_smooth_l1_loss_ohem_param();
+  inline void clear_has_smooth_l1_loss_ohem_param();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -3432,6 +3444,7 @@ class LayerParameter : public ::google::protobuf::Message {
   ::caffe::InnerProductBlobParameter* inner_product_blob_param_;
   ::caffe::SmoothL1LossParameter* smooth_l1_loss_param_;
   ::caffe::BoxAnnotatorOHEMParameter* box_annotator_ohem_param_;
+  ::caffe::SmoothL1LossOHEMParameter* smooth_l1_loss_ohem_param_;
   int phase_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_caffe_2eproto();
@@ -3440,6 +3453,75 @@ class LayerParameter : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static LayerParameter* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class SmoothL1LossOHEMParameter : public ::google::protobuf::Message {
+ public:
+  SmoothL1LossOHEMParameter();
+  virtual ~SmoothL1LossOHEMParameter();
+
+  SmoothL1LossOHEMParameter(const SmoothL1LossOHEMParameter& from);
+
+  inline SmoothL1LossOHEMParameter& operator=(const SmoothL1LossOHEMParameter& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SmoothL1LossOHEMParameter& default_instance();
+
+  void Swap(SmoothL1LossOHEMParameter* other);
+
+  // implements Message ----------------------------------------------
+
+  SmoothL1LossOHEMParameter* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const SmoothL1LossOHEMParameter& from);
+  void MergeFrom(const SmoothL1LossOHEMParameter& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:caffe.SmoothL1LossOHEMParameter)
+ private:
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  friend void  protobuf_AddDesc_caffe_2eproto();
+  friend void protobuf_AssignDesc_caffe_2eproto();
+  friend void protobuf_ShutdownFile_caffe_2eproto();
+
+  void InitAsDefaultInstance();
+  static SmoothL1LossOHEMParameter* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -16505,6 +16587,51 @@ inline void LayerParameter::set_allocated_box_annotator_ohem_param(::caffe::BoxA
   }
   // @@protoc_insertion_point(field_set_allocated:caffe.LayerParameter.box_annotator_ohem_param)
 }
+
+// optional .caffe.SmoothL1LossOHEMParameter smooth_l1_loss_ohem_param = 152;
+inline bool LayerParameter::has_smooth_l1_loss_ohem_param() const {
+  return (_has_bits_[1] & 0x80000000u) != 0;
+}
+inline void LayerParameter::set_has_smooth_l1_loss_ohem_param() {
+  _has_bits_[1] |= 0x80000000u;
+}
+inline void LayerParameter::clear_has_smooth_l1_loss_ohem_param() {
+  _has_bits_[1] &= ~0x80000000u;
+}
+inline void LayerParameter::clear_smooth_l1_loss_ohem_param() {
+  if (smooth_l1_loss_ohem_param_ != NULL) smooth_l1_loss_ohem_param_->::caffe::SmoothL1LossOHEMParameter::Clear();
+  clear_has_smooth_l1_loss_ohem_param();
+}
+inline const ::caffe::SmoothL1LossOHEMParameter& LayerParameter::smooth_l1_loss_ohem_param() const {
+  // @@protoc_insertion_point(field_get:caffe.LayerParameter.smooth_l1_loss_ohem_param)
+  return smooth_l1_loss_ohem_param_ != NULL ? *smooth_l1_loss_ohem_param_ : *default_instance_->smooth_l1_loss_ohem_param_;
+}
+inline ::caffe::SmoothL1LossOHEMParameter* LayerParameter::mutable_smooth_l1_loss_ohem_param() {
+  set_has_smooth_l1_loss_ohem_param();
+  if (smooth_l1_loss_ohem_param_ == NULL) smooth_l1_loss_ohem_param_ = new ::caffe::SmoothL1LossOHEMParameter;
+  // @@protoc_insertion_point(field_mutable:caffe.LayerParameter.smooth_l1_loss_ohem_param)
+  return smooth_l1_loss_ohem_param_;
+}
+inline ::caffe::SmoothL1LossOHEMParameter* LayerParameter::release_smooth_l1_loss_ohem_param() {
+  clear_has_smooth_l1_loss_ohem_param();
+  ::caffe::SmoothL1LossOHEMParameter* temp = smooth_l1_loss_ohem_param_;
+  smooth_l1_loss_ohem_param_ = NULL;
+  return temp;
+}
+inline void LayerParameter::set_allocated_smooth_l1_loss_ohem_param(::caffe::SmoothL1LossOHEMParameter* smooth_l1_loss_ohem_param) {
+  delete smooth_l1_loss_ohem_param_;
+  smooth_l1_loss_ohem_param_ = smooth_l1_loss_ohem_param;
+  if (smooth_l1_loss_ohem_param) {
+    set_has_smooth_l1_loss_ohem_param();
+  } else {
+    clear_has_smooth_l1_loss_ohem_param();
+  }
+  // @@protoc_insertion_point(field_set_allocated:caffe.LayerParameter.smooth_l1_loss_ohem_param)
+}
+
+// -------------------------------------------------------------------
+
+// SmoothL1LossOHEMParameter
 
 // -------------------------------------------------------------------
 

@@ -309,7 +309,7 @@ message ParamSpec {
 // NOTE
 // Update the next available ID when you add a new LayerParameter field.
 //
-// LayerParameter next available layer-specific ID: 150 (last added: recurrent_param)
+// LayerParameter next available layer-specific ID: 153 (last added: smooth_l1_loss_ohem)
 message LayerParameter {
   optional string name = 1; // the layer name
   optional string type = 2; // the layer type
@@ -411,7 +411,14 @@ message LayerParameter {
   optional InnerProductBlobParameter inner_product_blob_param = 149;
   optional SmoothL1LossParameter smooth_l1_loss_param = 150;  
   optional BoxAnnotatorOHEMParameter box_annotator_ohem_param = 151;
+  optional SmoothL1LossOHEMParameter smooth_l1_loss_ohem_param = 152;
 }
+
+message SmoothL1LossOHEMParameter {
+
+	
+}
+
 
 // Message that stores parameters used to apply transformation
 // to the data layer's data
