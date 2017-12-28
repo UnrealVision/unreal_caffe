@@ -53,7 +53,7 @@ Add `/path/to/unreal_caffe/python` to your `~/.bashrc` or `~/.zshrc` file. You w
 
 
 
-后面我们会把一些使用t_caffe的目标检测，路面分割等的demo放上来。欢迎大家来贡献feature！1
+后面我们会把一些使用unreal_caffe的目标检测，路面分割等的demo放上来。欢迎大家来贡献feature！
 
 
 
