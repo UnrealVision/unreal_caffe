@@ -487,7 +487,7 @@
     /usr/include/gflags/gflags.h \
     /usr/include/gflags/gflags_declare.h \
     /usr/include/gflags/gflags_gflags.h \
-    /usr/include/glog/logging.h \
+    /usr/local/include/glog/logging.h \
     /usr/include/c++/5/ostream \
     /usr/include/c++/5/ios \
     /usr/include/c++/5/bits/ios_base.h \
@@ -511,8 +511,8 @@
     /usr/include/c++/5/istream \
     /usr/include/c++/5/bits/istream.tcc \
     /usr/include/c++/5/bits/sstream.tcc \
-    /usr/include/glog/log_severity.h \
-    /usr/include/glog/vlog_is_on.h \
+    /usr/local/include/glog/log_severity.h \
+    /usr/local/include/glog/vlog_is_on.h \
     /usr/include/c++/5/climits \
     /usr/include/c++/5/fstream \
     /usr/include/c++/5/bits/codecvt.h \

@@ -57,6 +57,27 @@ Add `/path/to/unreal_caffe/python` to your `~/.bashrc` or `~/.zshrc` file. You w
 
 
 
+## 在C++项目中使用
+
+由于我们之前安装用的是make，因此直接用CMake来查找caffe是失败的。但是我们可以在cmake中手动去找到它，具体写法也很简单：
+
+```
+link_directories("/home/jintian/Documents/unreal_caffe/include/")
+include_directories("/home/jintian/Documents/unreal_caffe/include/")
+find_library(caffe_LIBRARY
+        NAMES  caffe
+        HINTS "/home/jintian/Documents/unreal_caffe/build/lib/"
+        PATHS "/home/jintian/Documents/unreal_caffe/build/lib/")
+```
+
+大家注意，这里其还是得手动把include和lib添加进来，最后一步，在target link的时候link一下库即可：
+
+```
+target_link_libraries(rfcn_caffe ${caffe_LIBRARY})
+```
+
+
+
 # Copyright
 
 caffe来自与BVLC，欢迎大家cite：

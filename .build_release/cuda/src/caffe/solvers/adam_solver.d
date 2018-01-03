@@ -128,7 +128,7 @@
     /usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h \
     /usr/include/stdint.h \
     /usr/include/x86_64-linux-gnu/bits/wchar.h \
-    /usr/include/glog/logging.h \
+    /usr/local/include/glog/logging.h \
     /usr/include/errno.h \
     /usr/include/x86_64-linux-gnu/bits/errno.h \
     /usr/include/linux/errno.h \
@@ -230,8 +230,8 @@
     /usr/include/gflags/gflags.h \
     /usr/include/gflags/gflags_declare.h \
     /usr/include/gflags/gflags_gflags.h \
-    /usr/include/glog/log_severity.h \
-    /usr/include/glog/vlog_is_on.h \
+    /usr/local/include/glog/log_severity.h \
+    /usr/local/include/glog/vlog_is_on.h \
     ./include/caffe/common.hpp \
     /usr/include/boost/shared_ptr.hpp \
     /usr/include/boost/smart_ptr/shared_ptr.hpp \

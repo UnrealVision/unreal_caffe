@@ -1,3 +1,0 @@
-/home/jintian/Documents/unreal_caffe/examples/unreal_example/build/CMakeFiles/rebuild_cache.dir
-/home/jintian/Documents/unreal_caffe/examples/unreal_example/build/CMakeFiles/edit_cache.dir
-/home/jintian/Documents/unreal_caffe/examples/unreal_example/build/CMakeFiles/show_layers.dir
