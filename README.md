@@ -1,8 +1,11 @@
 # Unreal Caffe
 
-![Build Status](https://travis-ci.org/BVLC/caffe.svg?branch=master)
-
-![Documentation Status](https://img.shields.io/badge/中文文档-最新-brightgreen.svg)
+[![Travis Build Status](https://travis-ci.org/uglide/RedisDesktopManager.svg?branch=0.9)](https://travis-ci.org/uglide/RedisDesktopManager) 
+[![Appveyor Build status](https://ci.appveyor.com/api/projects/status/91mj2ge0lxjf693c/branch/0.9?svg=true)](https://ci.appveyor.com/project/uglide/redisdesktopmanager/branch/0.9)
+[![Coverage Status](https://coveralls.io/repos/uglide/RedisDesktopManager/badge.svg?branch=0.9)](https://coveralls.io/r/uglide/RedisDesktopManager?branch=0.9)
+[![Coverity Scan Build](https://scan.coverity.com/projects/3548/badge.svg)](https://scan.coverity.com/projects/3548)
+[![Documentation Status](https://readthedocs.org/projects/redisdesktopmanager/badge/?version=latest)](http://docs.redisdesktop.com/en/latest/?badge=latest)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/uglide/RedisDesktopManager)
 
 
 
@@ -19,7 +22,8 @@ unreal_caffe 是由Unreal Vision维护的一个caffe版本，在使用它完成�
 
 
 
-# 安装
+
+## 安装
 
 你编译过caffe吗？你觉得蛋疼吗？没有错，是很蛋疼，但是在**unreal_caffe**这个版本里面，你不需要再忍受蛋疼。你只需要克隆，然后make，不用鸡巴的改各种乱七八糟的文件。直接make。当然前提是你得安装一些依赖。不过你不是从一个新的机器来编译，依赖应该都有。
 
@@ -49,7 +53,7 @@ Add `/path/to/unreal_caffe/python` to your `~/.bashrc` or `~/.zshrc` file. You w
 
 
 
-# 视觉任务
+## 视觉任务
 
 
 

@@ -405,13 +405,19 @@ message LayerParameter {
   optional TanHParameter tanh_param = 127;
   optional ThresholdParameter threshold_param = 128;
   optional TileParameter tile_param = 138;
+
   optional WindowDataParameter window_data_param = 129;
   optional ROIPoolingParameter roi_pooling_param = 147;
   optional PSROIPoolingParameter psroi_pooling_param = 148;
   optional InnerProductBlobParameter inner_product_blob_param = 149;
+
   optional SmoothL1LossParameter smooth_l1_loss_param = 150;  
   optional BoxAnnotatorOHEMParameter box_annotator_ohem_param = 151;
   optional SmoothL1LossOHEMParameter smooth_l1_loss_ohem_param = 152;
+
+  optional ProposalParameter proposal_param = 153;
+
+
 }
 
 message SmoothL1LossOHEMParameter {
@@ -839,6 +845,18 @@ message ROIPoolingParameter {
   // input scale to the scale used when pooling
   optional float spatial_scale = 3 [default = 1];
 }
+
+message ProposalParameter {
+  optional uint32 feat_stride = 1 [default = 16];
+  optional uint32 base_size = 2 [default = 16];
+  optional uint32 min_size = 3 [default = 16];
+  repeated float ratio = 4;
+  repeated float scale = 5;
+  optional uint32 pre_nms_topn = 6 [default = 6000];
+  optional uint32 post_nms_topn = 7 [default = 300];
+  optional float nms_thresh = 8 [default = 0.7];
+}
+
 
 message PSROIPoolingParameter {
    required float spatial_scale = 1; 

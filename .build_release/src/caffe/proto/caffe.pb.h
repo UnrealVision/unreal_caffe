@@ -72,6 +72,7 @@ class HingeLossParameter;
 class ImageDataParameter;
 class InfogainLossParameter;
 class ROIPoolingParameter;
+class ProposalParameter;
 class PSROIPoolingParameter;
 class InnerProductBlobParameter;
 class InnerProductParameter;
@@ -3264,6 +3265,15 @@ class LayerParameter : public ::google::protobuf::Message {
   inline ::caffe::SmoothL1LossOHEMParameter* release_smooth_l1_loss_ohem_param();
   inline void set_allocated_smooth_l1_loss_ohem_param(::caffe::SmoothL1LossOHEMParameter* smooth_l1_loss_ohem_param);
 
+  // optional .caffe.ProposalParameter proposal_param = 153;
+  inline bool has_proposal_param() const;
+  inline void clear_proposal_param();
+  static const int kProposalParamFieldNumber = 153;
+  inline const ::caffe::ProposalParameter& proposal_param() const;
+  inline ::caffe::ProposalParameter* mutable_proposal_param();
+  inline ::caffe::ProposalParameter* release_proposal_param();
+  inline void set_allocated_proposal_param(::caffe::ProposalParameter* proposal_param);
+
   // @@protoc_insertion_point(class_scope:caffe.LayerParameter)
  private:
   inline void set_has_name();
@@ -3378,10 +3388,13 @@ class LayerParameter : public ::google::protobuf::Message {
   inline void clear_has_box_annotator_ohem_param();
   inline void set_has_smooth_l1_loss_ohem_param();
   inline void clear_has_smooth_l1_loss_ohem_param();
+  inline void set_has_proposal_param();
+  inline void clear_has_proposal_param();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::uint32 _has_bits_[2];
+  ::google::protobuf::uint32 _has_bits_[3];
+  mutable int _cached_size_;
   ::std::string* name_;
   ::std::string* type_;
   ::google::protobuf::RepeatedPtrField< ::std::string> bottom_;
@@ -3445,8 +3458,8 @@ class LayerParameter : public ::google::protobuf::Message {
   ::caffe::SmoothL1LossParameter* smooth_l1_loss_param_;
   ::caffe::BoxAnnotatorOHEMParameter* box_annotator_ohem_param_;
   ::caffe::SmoothL1LossOHEMParameter* smooth_l1_loss_ohem_param_;
+  ::caffe::ProposalParameter* proposal_param_;
   int phase_;
-  mutable int _cached_size_;
   friend void  protobuf_AddDesc_caffe_2eproto();
   friend void protobuf_AssignDesc_caffe_2eproto();
   friend void protobuf_ShutdownFile_caffe_2eproto();
@@ -6476,6 +6489,161 @@ class ROIPoolingParameter : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static ROIPoolingParameter* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class ProposalParameter : public ::google::protobuf::Message {
+ public:
+  ProposalParameter();
+  virtual ~ProposalParameter();
+
+  ProposalParameter(const ProposalParameter& from);
+
+  inline ProposalParameter& operator=(const ProposalParameter& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ProposalParameter& default_instance();
+
+  void Swap(ProposalParameter* other);
+
+  // implements Message ----------------------------------------------
+
+  ProposalParameter* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const ProposalParameter& from);
+  void MergeFrom(const ProposalParameter& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 feat_stride = 1 [default = 16];
+  inline bool has_feat_stride() const;
+  inline void clear_feat_stride();
+  static const int kFeatStrideFieldNumber = 1;
+  inline ::google::protobuf::uint32 feat_stride() const;
+  inline void set_feat_stride(::google::protobuf::uint32 value);
+
+  // optional uint32 base_size = 2 [default = 16];
+  inline bool has_base_size() const;
+  inline void clear_base_size();
+  static const int kBaseSizeFieldNumber = 2;
+  inline ::google::protobuf::uint32 base_size() const;
+  inline void set_base_size(::google::protobuf::uint32 value);
+
+  // optional uint32 min_size = 3 [default = 16];
+  inline bool has_min_size() const;
+  inline void clear_min_size();
+  static const int kMinSizeFieldNumber = 3;
+  inline ::google::protobuf::uint32 min_size() const;
+  inline void set_min_size(::google::protobuf::uint32 value);
+
+  // repeated float ratio = 4;
+  inline int ratio_size() const;
+  inline void clear_ratio();
+  static const int kRatioFieldNumber = 4;
+  inline float ratio(int index) const;
+  inline void set_ratio(int index, float value);
+  inline void add_ratio(float value);
+  inline const ::google::protobuf::RepeatedField< float >&
+      ratio() const;
+  inline ::google::protobuf::RepeatedField< float >*
+      mutable_ratio();
+
+  // repeated float scale = 5;
+  inline int scale_size() const;
+  inline void clear_scale();
+  static const int kScaleFieldNumber = 5;
+  inline float scale(int index) const;
+  inline void set_scale(int index, float value);
+  inline void add_scale(float value);
+  inline const ::google::protobuf::RepeatedField< float >&
+      scale() const;
+  inline ::google::protobuf::RepeatedField< float >*
+      mutable_scale();
+
+  // optional uint32 pre_nms_topn = 6 [default = 6000];
+  inline bool has_pre_nms_topn() const;
+  inline void clear_pre_nms_topn();
+  static const int kPreNmsTopnFieldNumber = 6;
+  inline ::google::protobuf::uint32 pre_nms_topn() const;
+  inline void set_pre_nms_topn(::google::protobuf::uint32 value);
+
+  // optional uint32 post_nms_topn = 7 [default = 300];
+  inline bool has_post_nms_topn() const;
+  inline void clear_post_nms_topn();
+  static const int kPostNmsTopnFieldNumber = 7;
+  inline ::google::protobuf::uint32 post_nms_topn() const;
+  inline void set_post_nms_topn(::google::protobuf::uint32 value);
+
+  // optional float nms_thresh = 8 [default = 0.7];
+  inline bool has_nms_thresh() const;
+  inline void clear_nms_thresh();
+  static const int kNmsThreshFieldNumber = 8;
+  inline float nms_thresh() const;
+  inline void set_nms_thresh(float value);
+
+  // @@protoc_insertion_point(class_scope:caffe.ProposalParameter)
+ private:
+  inline void set_has_feat_stride();
+  inline void clear_has_feat_stride();
+  inline void set_has_base_size();
+  inline void clear_has_base_size();
+  inline void set_has_min_size();
+  inline void clear_has_min_size();
+  inline void set_has_pre_nms_topn();
+  inline void clear_has_pre_nms_topn();
+  inline void set_has_post_nms_topn();
+  inline void clear_has_post_nms_topn();
+  inline void set_has_nms_thresh();
+  inline void clear_has_nms_thresh();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 feat_stride_;
+  ::google::protobuf::uint32 base_size_;
+  ::google::protobuf::RepeatedField< float > ratio_;
+  ::google::protobuf::uint32 min_size_;
+  ::google::protobuf::uint32 pre_nms_topn_;
+  ::google::protobuf::RepeatedField< float > scale_;
+  ::google::protobuf::uint32 post_nms_topn_;
+  float nms_thresh_;
+  friend void  protobuf_AddDesc_caffe_2eproto();
+  friend void protobuf_AssignDesc_caffe_2eproto();
+  friend void protobuf_ShutdownFile_caffe_2eproto();
+
+  void InitAsDefaultInstance();
+  static ProposalParameter* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -16629,6 +16797,47 @@ inline void LayerParameter::set_allocated_smooth_l1_loss_ohem_param(::caffe::Smo
   // @@protoc_insertion_point(field_set_allocated:caffe.LayerParameter.smooth_l1_loss_ohem_param)
 }
 
+// optional .caffe.ProposalParameter proposal_param = 153;
+inline bool LayerParameter::has_proposal_param() const {
+  return (_has_bits_[2] & 0x00000001u) != 0;
+}
+inline void LayerParameter::set_has_proposal_param() {
+  _has_bits_[2] |= 0x00000001u;
+}
+inline void LayerParameter::clear_has_proposal_param() {
+  _has_bits_[2] &= ~0x00000001u;
+}
+inline void LayerParameter::clear_proposal_param() {
+  if (proposal_param_ != NULL) proposal_param_->::caffe::ProposalParameter::Clear();
+  clear_has_proposal_param();
+}
+inline const ::caffe::ProposalParameter& LayerParameter::proposal_param() const {
+  // @@protoc_insertion_point(field_get:caffe.LayerParameter.proposal_param)
+  return proposal_param_ != NULL ? *proposal_param_ : *default_instance_->proposal_param_;
+}
+inline ::caffe::ProposalParameter* LayerParameter::mutable_proposal_param() {
+  set_has_proposal_param();
+  if (proposal_param_ == NULL) proposal_param_ = new ::caffe::ProposalParameter;
+  // @@protoc_insertion_point(field_mutable:caffe.LayerParameter.proposal_param)
+  return proposal_param_;
+}
+inline ::caffe::ProposalParameter* LayerParameter::release_proposal_param() {
+  clear_has_proposal_param();
+  ::caffe::ProposalParameter* temp = proposal_param_;
+  proposal_param_ = NULL;
+  return temp;
+}
+inline void LayerParameter::set_allocated_proposal_param(::caffe::ProposalParameter* proposal_param) {
+  delete proposal_param_;
+  proposal_param_ = proposal_param;
+  if (proposal_param) {
+    set_has_proposal_param();
+  } else {
+    clear_has_proposal_param();
+  }
+  // @@protoc_insertion_point(field_set_allocated:caffe.LayerParameter.proposal_param)
+}
+
 // -------------------------------------------------------------------
 
 // SmoothL1LossOHEMParameter
@@ -19791,6 +20000,214 @@ inline void ROIPoolingParameter::set_spatial_scale(float value) {
   set_has_spatial_scale();
   spatial_scale_ = value;
   // @@protoc_insertion_point(field_set:caffe.ROIPoolingParameter.spatial_scale)
+}
+
+// -------------------------------------------------------------------
+
+// ProposalParameter
+
+// optional uint32 feat_stride = 1 [default = 16];
+inline bool ProposalParameter::has_feat_stride() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void ProposalParameter::set_has_feat_stride() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void ProposalParameter::clear_has_feat_stride() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void ProposalParameter::clear_feat_stride() {
+  feat_stride_ = 16u;
+  clear_has_feat_stride();
+}
+inline ::google::protobuf::uint32 ProposalParameter::feat_stride() const {
+  // @@protoc_insertion_point(field_get:caffe.ProposalParameter.feat_stride)
+  return feat_stride_;
+}
+inline void ProposalParameter::set_feat_stride(::google::protobuf::uint32 value) {
+  set_has_feat_stride();
+  feat_stride_ = value;
+  // @@protoc_insertion_point(field_set:caffe.ProposalParameter.feat_stride)
+}
+
+// optional uint32 base_size = 2 [default = 16];
+inline bool ProposalParameter::has_base_size() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void ProposalParameter::set_has_base_size() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void ProposalParameter::clear_has_base_size() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void ProposalParameter::clear_base_size() {
+  base_size_ = 16u;
+  clear_has_base_size();
+}
+inline ::google::protobuf::uint32 ProposalParameter::base_size() const {
+  // @@protoc_insertion_point(field_get:caffe.ProposalParameter.base_size)
+  return base_size_;
+}
+inline void ProposalParameter::set_base_size(::google::protobuf::uint32 value) {
+  set_has_base_size();
+  base_size_ = value;
+  // @@protoc_insertion_point(field_set:caffe.ProposalParameter.base_size)
+}
+
+// optional uint32 min_size = 3 [default = 16];
+inline bool ProposalParameter::has_min_size() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void ProposalParameter::set_has_min_size() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void ProposalParameter::clear_has_min_size() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void ProposalParameter::clear_min_size() {
+  min_size_ = 16u;
+  clear_has_min_size();
+}
+inline ::google::protobuf::uint32 ProposalParameter::min_size() const {
+  // @@protoc_insertion_point(field_get:caffe.ProposalParameter.min_size)
+  return min_size_;
+}
+inline void ProposalParameter::set_min_size(::google::protobuf::uint32 value) {
+  set_has_min_size();
+  min_size_ = value;
+  // @@protoc_insertion_point(field_set:caffe.ProposalParameter.min_size)
+}
+
+// repeated float ratio = 4;
+inline int ProposalParameter::ratio_size() const {
+  return ratio_.size();
+}
+inline void ProposalParameter::clear_ratio() {
+  ratio_.Clear();
+}
+inline float ProposalParameter::ratio(int index) const {
+  // @@protoc_insertion_point(field_get:caffe.ProposalParameter.ratio)
+  return ratio_.Get(index);
+}
+inline void ProposalParameter::set_ratio(int index, float value) {
+  ratio_.Set(index, value);
+  // @@protoc_insertion_point(field_set:caffe.ProposalParameter.ratio)
+}
+inline void ProposalParameter::add_ratio(float value) {
+  ratio_.Add(value);
+  // @@protoc_insertion_point(field_add:caffe.ProposalParameter.ratio)
+}
+inline const ::google::protobuf::RepeatedField< float >&
+ProposalParameter::ratio() const {
+  // @@protoc_insertion_point(field_list:caffe.ProposalParameter.ratio)
+  return ratio_;
+}
+inline ::google::protobuf::RepeatedField< float >*
+ProposalParameter::mutable_ratio() {
+  // @@protoc_insertion_point(field_mutable_list:caffe.ProposalParameter.ratio)
+  return &ratio_;
+}
+
+// repeated float scale = 5;
+inline int ProposalParameter::scale_size() const {
+  return scale_.size();
+}
+inline void ProposalParameter::clear_scale() {
+  scale_.Clear();
+}
+inline float ProposalParameter::scale(int index) const {
+  // @@protoc_insertion_point(field_get:caffe.ProposalParameter.scale)
+  return scale_.Get(index);
+}
+inline void ProposalParameter::set_scale(int index, float value) {
+  scale_.Set(index, value);
+  // @@protoc_insertion_point(field_set:caffe.ProposalParameter.scale)
+}
+inline void ProposalParameter::add_scale(float value) {
+  scale_.Add(value);
+  // @@protoc_insertion_point(field_add:caffe.ProposalParameter.scale)
+}
+inline const ::google::protobuf::RepeatedField< float >&
+ProposalParameter::scale() const {
+  // @@protoc_insertion_point(field_list:caffe.ProposalParameter.scale)
+  return scale_;
+}
+inline ::google::protobuf::RepeatedField< float >*
+ProposalParameter::mutable_scale() {
+  // @@protoc_insertion_point(field_mutable_list:caffe.ProposalParameter.scale)
+  return &scale_;
+}
+
+// optional uint32 pre_nms_topn = 6 [default = 6000];
+inline bool ProposalParameter::has_pre_nms_topn() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void ProposalParameter::set_has_pre_nms_topn() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void ProposalParameter::clear_has_pre_nms_topn() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void ProposalParameter::clear_pre_nms_topn() {
+  pre_nms_topn_ = 6000u;
+  clear_has_pre_nms_topn();
+}
+inline ::google::protobuf::uint32 ProposalParameter::pre_nms_topn() const {
+  // @@protoc_insertion_point(field_get:caffe.ProposalParameter.pre_nms_topn)
+  return pre_nms_topn_;
+}
+inline void ProposalParameter::set_pre_nms_topn(::google::protobuf::uint32 value) {
+  set_has_pre_nms_topn();
+  pre_nms_topn_ = value;
+  // @@protoc_insertion_point(field_set:caffe.ProposalParameter.pre_nms_topn)
+}
+
+// optional uint32 post_nms_topn = 7 [default = 300];
+inline bool ProposalParameter::has_post_nms_topn() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void ProposalParameter::set_has_post_nms_topn() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void ProposalParameter::clear_has_post_nms_topn() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void ProposalParameter::clear_post_nms_topn() {
+  post_nms_topn_ = 300u;
+  clear_has_post_nms_topn();
+}
+inline ::google::protobuf::uint32 ProposalParameter::post_nms_topn() const {
+  // @@protoc_insertion_point(field_get:caffe.ProposalParameter.post_nms_topn)
+  return post_nms_topn_;
+}
+inline void ProposalParameter::set_post_nms_topn(::google::protobuf::uint32 value) {
+  set_has_post_nms_topn();
+  post_nms_topn_ = value;
+  // @@protoc_insertion_point(field_set:caffe.ProposalParameter.post_nms_topn)
+}
+
+// optional float nms_thresh = 8 [default = 0.7];
+inline bool ProposalParameter::has_nms_thresh() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void ProposalParameter::set_has_nms_thresh() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void ProposalParameter::clear_has_nms_thresh() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void ProposalParameter::clear_nms_thresh() {
+  nms_thresh_ = 0.7f;
+  clear_has_nms_thresh();
+}
+inline float ProposalParameter::nms_thresh() const {
+  // @@protoc_insertion_point(field_get:caffe.ProposalParameter.nms_thresh)
+  return nms_thresh_;
+}
+inline void ProposalParameter::set_nms_thresh(float value) {
+  set_has_nms_thresh();
+  nms_thresh_ = value;
+  // @@protoc_insertion_point(field_set:caffe.ProposalParameter.nms_thresh)
 }
 
 // -------------------------------------------------------------------
