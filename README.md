@@ -30,6 +30,7 @@ unreal_caffe 是由Unreal Vision维护的一个caffe版本，在使用它完成�
 ```shell
 git clone https://github.com/UnrealVision/unreal_caffe.git
 cd unreal_caffe
+./generatepb.sh
 make -j32
 ```
 

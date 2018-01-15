@@ -495,21 +495,49 @@
     ./include/caffe/util/cudnn.hpp \
     /usr/local/cuda/include/cudnn.h \
     .build_release/src/caffe/proto/caffe.pb.h \
-    /usr/include/google/protobuf/stubs/common.h \
-    /usr/include/google/protobuf/generated_message_util.h \
-    /usr/include/google/protobuf/stubs/once.h \
-    /usr/include/google/protobuf/stubs/atomicops.h \
-    /usr/include/google/protobuf/stubs/platform_macros.h \
-    /usr/include/google/protobuf/stubs/atomicops_internals_x86_gcc.h \
-    /usr/include/google/protobuf/message.h \
-    /usr/include/google/protobuf/message_lite.h \
-    /usr/include/google/protobuf/descriptor.h \
-    /usr/include/google/protobuf/repeated_field.h \
+    /usr/local/include/google/protobuf/stubs/common.h \
+    /usr/local/include/google/protobuf/stubs/port.h \
+    /usr/include/x86_64-linux-gnu/sys/param.h \
+    /usr/include/signal.h \
+    /usr/include/x86_64-linux-gnu/bits/signum.h \
+    /usr/include/x86_64-linux-gnu/bits/siginfo.h \
+    /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+    /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+    /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+    /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+    /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+    /usr/include/x86_64-linux-gnu/bits/param.h \
+    /usr/include/linux/param.h \
+    /usr/include/x86_64-linux-gnu/asm/param.h \
+    /usr/include/asm-generic/param.h \
+    /usr/include/byteswap.h \
+    /usr/local/include/google/protobuf/stubs/macros.h \
+    /usr/local/include/google/protobuf/stubs/platform_macros.h \
+    /usr/local/include/google/protobuf/stubs/logging.h \
+    /usr/local/include/google/protobuf/stubs/scoped_ptr.h \
+    /usr/local/include/google/protobuf/stubs/mutex.h \
+    /usr/local/include/google/protobuf/stubs/callback.h \
+    /usr/local/include/google/protobuf/stubs/type_traits.h \
+    /usr/local/include/google/protobuf/stubs/template_util.h \
+    /usr/local/include/google/protobuf/arena.h \
+    /usr/local/include/google/protobuf/stubs/atomic_sequence_num.h \
+    /usr/local/include/google/protobuf/stubs/atomicops.h \
+    /usr/local/include/google/protobuf/stubs/atomicops_internals_x86_gcc.h \
+    /usr/local/include/google/protobuf/arenastring.h \
+    /usr/local/include/google/protobuf/stubs/fastmem.h \
+    /usr/local/include/google/protobuf/generated_message_util.h \
+    /usr/local/include/google/protobuf/stubs/once.h \
+    /usr/local/include/google/protobuf/has_bits.h \
+    /usr/local/include/google/protobuf/metadata.h \
+    /usr/local/include/google/protobuf/unknown_field_set.h \
+    /usr/local/include/google/protobuf/message.h \
+    /usr/local/include/google/protobuf/message_lite.h \
+    /usr/local/include/google/protobuf/descriptor.h \
+    /usr/local/include/google/protobuf/repeated_field.h \
     /usr/include/c++/5/iterator \
     /usr/include/c++/5/bits/stream_iterator.h \
-    /usr/include/google/protobuf/stubs/type_traits.h \
-    /usr/include/google/protobuf/stubs/template_util.h \
-    /usr/include/google/protobuf/extension_set.h \
-    /usr/include/google/protobuf/generated_enum_reflection.h \
-    /usr/include/google/protobuf/unknown_field_set.h \
+    /usr/local/include/google/protobuf/stubs/casts.h \
+    /usr/local/include/google/protobuf/extension_set.h \
+    /usr/local/include/google/protobuf/generated_enum_reflection.h \
+    /usr/local/include/google/protobuf/generated_enum_util.h \
     ./include/caffe/util/im2col.hpp
